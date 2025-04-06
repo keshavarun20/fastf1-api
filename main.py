@@ -1,9 +1,7 @@
-# main.py
 from fastapi import FastAPI
 import fastf1
 
 app = FastAPI()
-fastf1.Cache.enable_cache('cache')  # Enables disk caching to avoid refetching
 
 @app.get("/telemetry")
 def get_telemetry(driver: str = "VER", year: int = 2023, gp: str = "Monza"):
